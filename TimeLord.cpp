@@ -14,6 +14,7 @@ TimeLord::TimeLord(){
 }
 	
 bool TimeLord::TimeZone(int z){
+	z = z * 60;
 	if(Absolute(z)>720) return false;
 	timezone=z;
 	return true;
