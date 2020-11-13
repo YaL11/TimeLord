@@ -4,8 +4,9 @@
 // http://forum.arduino.cc/index.php?topic=129249.msg972860#msg972860
 
 // what is our longitude (west values negative) and latitude (south values negative)
-float const LONGITUDE = 145.00;
-float const LATITUDE = -37.00;
+const float LATITUDE = -37.00;
+const float LONGITUDE = 145.00;
+const int TIMEZONE = 10;
 
 void setup()
   {
@@ -13,7 +14,7 @@ void setup()
   Serial.begin (115200);
   
   TimeLord tardis; 
-  tardis.TimeZone(10 * 60); // tell TimeLord what timezone your RTC is synchronized to. You can ignore DST
+  tardis.TimeZone(TIMEZONE); // tell TimeLord what timezone your RTC is synchronized to. You can ignore DST
   // as long as the RTC never changes back and forth between DST and non-DST
   tardis.Position(LATITUDE, LONGITUDE); // tell TimeLord where in the world we are
   
